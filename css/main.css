@@ -1,43 +1,107 @@
-body {
-    margin: 60px auto;
-    width: 70%;
-}
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+body {    margin: 60px auto;
+    width: 70%;}
+
+/* Home navigation ---------------------------------------------------*/
+nav{  color:#ded9b4;
+  background-color: #0b3457;
+  Display : flex;
+  flex-direction: row;
+  Justify-content: space-around;
+  Align-items: center ;
+  font-size: 1.5em;}
+
+nav ul {    font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
-    font-weight: bold;
-}
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
-a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
-}
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-}
-p {
-    font-size: 1.5em;
+    font-weight: bold; }
+nav ul li {    display: inline;
+    margin-right: 40px;
+    margin-left: 40px;}
+
+nav a{    text-decoration: none;
+    color:#ded9b4;
+    list-style-type: none;}
+/* Tutorial navigation ------------------------------------------------- */
+
+.tutoNavig a {    text-decoration: none;
+    color:#ded9b4;
+    list-style-type: none; }
+
+.tutoNavi{
+  Width : 20%;
+  color:#ded9b4;
+  background-color: #0b3457;
+  word-wrap: break-word;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: auto;}
+
+.tutoNavig ul{  color:#ded9b4;
+  background-color: #0b3457;
+  word-wrap: break-word;
+  list-style-type: none;
+    margin: 0;
+    padding-top: 20 px;}
+
+/* footer  ------------------------------------------------- */
+footer {    border-top: 1px solid #d5d5d5;
+    font-size: .8em;}
+
+footer ul {        font-family:'Helvetica', 'Arial', 'Sans-Serif';
+        padding: 0px;
+        list-style: none;
+        font-weight: bold;    }
+footer ul li {        display: inline;
+        margin-right: 40px;
+        margin-left: 40px;    }
+/* general------------------------------------------------------------*/
+a {    text-decoration: none;
+    color: #999; }
+
+a:hover {    text-decoration: underline;}
+h1 {    font-size: 3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';}
+p {    font-size: 1em;
     line-height: 1.4em;
-    color: #333;
-}
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+    text-align: justify;
+    color: #333;}
+ul.posts {        margin: 20px auto 40px;
+        font-size: 1.5em;    }
+
+ul.posts li {        list-style: none;    }
+
+/* cv ------------------------------------------------- */
+iframe {    width: 100%;
+    height: calc(140vh - 30px);
+    background: black;}
+
+/* home ------------------------------------------------- */
+
+
+
+/* tutorial ------------------------------------------------- */
+
+
+/* personalised classes text------------------------------------------------- */
+
+.intro {    font-size: 1.3em; /* larger text */
+text-align: justify;
+    line-height: 1.4em;
+    color: #333;}
+
+
+.equation
+    {      font-style: italic;
+      text-align: center;    }
+
+/* personalised classes container ------------------------------------------------- */
+
+.container
+{
+    display: flex;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
+.mainT{
+  padding-left: 30px;
 }
