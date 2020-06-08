@@ -4,68 +4,173 @@
 		<meta charset="utf-8" />
 		<title>Ludivine Morvan, Deep learning for survival</title>
 		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+		<script id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
 		<nav>
-    		<ul>
-					<li><a href="../../index.html">Home</a></li>
-					<li><a href="../../cv.html">CV</a></li>
-					<li><a href="../../publication.html">Publications</a></li>
-					<li><a href="../../tutorial.html">Tutorials</a></li>
-		    </ul>
+			<ul>
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../cv.html">CV</a></li>
+				<li><a href="../../publication.html">Publications</a></li>
+				<li><a href="../../tutorial.html">Tutorials</a></li>
+			</ul>
 		</nav>
 		<div class="container">
 			<div class="tutoNavig">
-	    		<ul>
-						<li><a href="tutorial/survival/survival.html">Survival</a></li>
-				    		<ul>
-									<li><a href="../survival/survival.html">Generalities</a></li>
-									<li><a href="../survival/kaplanM.html">Kaplan Meier</a></li>
-									<li><a href="../survival/Cox.html">Cox</a></li>
-									<li><a href="../survival/RSF.html">RSF</a></li>
-						    </ul>
-						<li><a href="./tutorial/MachineLearning/generalities.html">Machine learning</a></li>
-				    		<ul>
-									<li><a href="../MachineLearning/generalities.html">Generalities</a></li>
-									<li><a href="../MachineLearning/svm.html">SVM</a></li>
-									<li><a href="../MachineLearning/RF.html">Random Forest</a></li>
-						    </ul>
-						<li><a href="./tutorial/DeepLearning/generalities.html">Deep learning</a></li>
-				    		<ul>
-									<li><a href="../DeepLearning/generalities.html">Generalities</a></li>
-									<li><a href="../DeepLearning/layers.html">Layers</a></li>
-									<li><a href="../DeepLearning/loss.html">Losses</a></li>
-						    </ul>
-			    </ul>
+				<ul>
+					<li><a class='t1' href="../survival/survival.html">Survival</a></li>
+					<ul>
+						<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
+						<li><a class='t2' href="../survival/kaplanM.html">Kaplan Meier</a></li>
+						<li><a class='t2' href="../survival/Cox.html">Cox</a></li>
+						<li><a class='t2' href="../survival/RSF.html">RSF</a></li>
+					</ul>
+					<li><a class='t1' href="../MachineLearning/generalities.html">Machine
+							learning</a></li>
+					<ul>
+						<li><a class='t2' href="../MachineLearning/generalities.html">Generalities</a></li>
+						<li><a class='t2' href="../MachineLearning/svm.html">SVM</a></li>
+						<li><a class='t2' href="../MachineLearning/RF.html">Random Forest</a></li>
+					</ul>
+					<li><a class='t1' href="../DeepLearning/generalities.html">Deep
+							learning</a></li>
+					<ul>
+						<li><a class='t2' href="../DeepLearning/generalities.html">Generalities</a></li>
+						<li><a class='t2' href="../DeepLearning/layers.html">Layers</a></li>
+						<li><a class='t2' href="../DeepLearning/loss.html">Losses</a></li>
+					</ul>
+				</ul>
 			</div><!-- /.tutoNavig -->
 
 
-    		<div class="mainT">
-        	<h1>Survival analysis</h1>
-					<p>Survival analysis corresponds to a set of statistical methods used to evaluate the time for an event to occur. The event can be for example the death, the realapse or the recovery. </p>
-          <p> The survival function <em> S(t) </em> is for a fixed <em> t </em>, the probability to survive until t, i-e :</p>
-            <p class ="equation">S(t) = P(X > t); </p>
-<p> with <em> t &lt 0 </em> and <em> X </em> the survival duration. We can also precise the density function, precised by:</p>
-<p class="equation"> f(t) = dS(t)dt</p>
-<p>This function can be represented by survival curves according to the time.</p>
-<figure>
-  <img src="./images/survCurve.png" alt="Survival curve" title="Survival curves" height=60% width=60% />
-  <figcaption> Survival curves. The black curve corresponds to the average survival curve.</figcaption>
-</figure>
-    		</div><!-- /.mainT -->
-		</div><!-- /.container -->
+			<div class="mainT">
+				
+				<div class=arrow>
+					<div class=previous>
+						<a href= '../../tutorial.html'> <image src=../../previous.png alt='next'
+								title='Previous page' width=12% height=12%/> &nbsp; Previous </a>
+					</div> <!-- /.previous -->
+
+					<div class=next>
+						<a href= 'kaplanM.html'>Next &nbsp; <image src=../../next.png alt='next'
+							title='Next page' width=15% height=15%/> </a>
+					</div> <!-- /.next -->
+				</div> <!-- /.arrow -->
+
+
+				<h1>Survival analysis</h1>
+				<p>Survival analysis corresponds to a set of statistical methods used to
+					evaluate the time for an event to occur. The event can be for example the
+					death, the realapse or the recovery. Thereafter, we will continue with the
+					example of the death as an event and the survival time, the time between
+					the diagnosis and the death. </p>
+				<p> The survival function <em> S(t) </em> is for a fixed <em> t </em>, the
+					probability to survive until t, i-e :</p>
+				<p class="equation">S(t) = P(X > t); </p>
+				<p> with <em> t &lt 0 </em> and <em> X </em> the survival duration. We can
+					also precise the density function:</p>
+				<p class="equation"> f(t) = dS(t)dt</p>
+				<p>This function can be represented by survival curves according to the
+					time.</p>
+				<figure>
+					<img src="./images/survCurve.png" alt="Survival curve" title="Survival
+						curves" height=40% width=40% />
+					<figcaption> Survival curves. The black curve corresponds to the average
+						survival curve. If we look at the figure, patients with the green curve
+						will have 75% of chance to be alive at 200 days when patients with the red
+						curve will have 25% to be alive, so the patient wil the green survival
+						curve have a better prognosis. </figcaption>
+				</figure>
+				<p> Moreover, survival analysis is characterised by the censorship. We call
+					censorship the fact that we don't observe the even of interest on the
+					individual. Right censorship is the most commun type of censorship. In this
+					case, we know when the disease was detected but we don't know when he will
+					died because at the last follow up at <em>t</em> days , the patient was
+					alive. So, we know that I lived more than <em>t</em> days but we don't know
+					exactly how long. </p>
+				<p> We can resume the different types of censorship in the figure below:
+				</p>
+				<figure>
+					<img src="./images/censorship.png" alt="censorship" title="censorship"
+						height=40% width=40% />
+					<figcaption> Censorship. t1: diagnosis time, t2: death time; When there is
+						no censorship, we know t1 and t2, so we know the exact duaration <em> d =
+							t2 - t1 </em> between diagnosis and death; With right-censorship, we know
+						the diagnosis time but not the time of death, we just know that <em> d
+							&rsaquo; Te - t1 </em>; When there is a left-censorship, whe just know
+						the death time so <em> d &rsaquo; t2 - Tb </em>; Finally for
+						interval-censorship we just know that <em> d &rsaquo;Te - Tb</em>.
+					</figcaption>
+				</figure>
+
+				<p>Thereafter, we will write <em> &delta;<sub> i </sub> </em>the censorsip
+					of the patient <em> i </em> (if <em> &delta;<sub> i </sub> </em> = 1 there
+					is an event and if <em> &delta;<sub> i </sub> </em>=0 there is
+					censorship/no event) and <em> t<sub> i </sub> </em> the time.</p>
+				<p>Survival analysis can be use to predict the efficiency of a treatment or
+					the seriousness of a disease </p>
+
+				<p>An important concept is the instantanious risk. It is defined as the
+					probability for an event in the time interval <em> [t + &Delta;t] </em>
+					knowing that the event didn't appended before <em> t</em>. It allows to
+					define the risk function (or hazard function) <em> h(t)</em> thats appears
+					to be a risk indicator: </p>
+
+				<p>$$h(t) = \lim_{\Delta t \to 0} \frac{Prob[t\leq T <t + \Delta t|T\geq
+						t]}{\Delta t} $$ </p>
+
+				<p>We can also define the cumulated risk<em> H(t) </em> defined by: </p>
+				<p> $$H(t) = \int_{0}^{t}h(s)ds $$</p>
+				<p>And, thanks to the conditional probilities theorem,</p>
+				<p>$$h(t) = \frac{f(t)}{S(t)}$$</p>
+				<p>Thanks to the equations above:</p>
+				<p>$$H(t) = log[S(t)]$$</p>
+				<p> Estimate one of these functions allow to estimate other ones. Several
+					methods exist to estimate this function and particularly the survival
+					function.</p>
+				<ul>
+					<li> Non-parametrics methods: use when no hypothesis can be done on the
+						survival distribution time. Example: Kaplan Meier and Nelson Aalen
+						methods.</li>
+					<li> Parametrics methods: need hypothesis on the survival distribution
+						time. Example: Proportional risk models.</li>
+					<li> Semi-parametrics methods: as the Cox model.</li>
+				</ul>
+				<p>In addition of this statistical analysis models, it exists machine
+					learning methods, modified to be applied to survival analysis. First, we
+					will see the statistical methods, after the machine learning methods and
+					finally, deep learning methods (type of machin learning methods). </p>
+
+				<div class=arrow>
+					<div class=previous>
+						<a href= '../../tutorial.html'> <image src=../../previous.png alt='next'
+								title='Previous page' width=12% height=12%/> &nbsp; Previous </a>
+					</div> <!-- /.previous -->
+
+					<div class=next>
+						<a href= 'kaplanM.html'>Next &nbsp; <image src=../../next.png alt='next'
+							title='Next page' width=15% height=15%/> </a>
+					</div> <!-- /.next -->
+				</div> <!-- /.arrow -->
+
+
+
+					</div> <!-- /.mainT -->
+				</div><!-- /.container -->
 
 
 
 
 
-		<footer>
-    		<ul>
-        		<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
-        		<li><a href="https://github.com/ludivinemv">github</a></li>
-						<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
+				<footer>
+					<ul>
+						<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
+
+						<!--<li><a href="https://github.com/ludivinemv">github</a></li>--> <li><a
+								href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
 						<li><a href="https://www.linkedin.com/in/ludivine-morvan-884153151/">linkedin</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+					</ul>
+				</footer>
+			</body>
+		</html>

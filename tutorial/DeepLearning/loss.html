@@ -43,6 +43,44 @@
 			<h1> Losses</h1>
 			<p>Page in progress ...</p>
 
+				<h1> Triplet loss</h1>
+<p>if A= anchor, P= positive and N=negative (example of the faces)
+equation: we want d(A,P) < d(A,N) donc ||f(A) -f(P)||² inf ou egual ||f(A) -f(N)||²
+donc  Func = ||f(A) -f(P)||² -||f(A) -f(N)||² + alpha (evite  =0, = margin) car si = 0 ça veut dire que negative et positive equivalent
+L(A,P,N) = max(Func,0): loss pour un single triplet
+on veut minimiser cette loss
+the cost function to minimize is J= sum L(A(i),P(i),N(i))
+si Func inf 0, max =0 mais si Func >0, positive loss
+Now, how to choose the triplet? first you need to have in your trainingset at least 2 individual fropm the same classes
+randomly? no because it is very to satisfy d(A,P)+ alpha < ou egual d(A,N) with this technique
+so we need triplet that are hard to satify the constraint (d(A,P) close to d(A,N))
+</p> <!-- https://www.coursera.org/lecture/convolutional-neural-networks/triplet-loss-HuUtN?utm_source=linkshare&siteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&ranEAID=je6NUbpObpQ&utm_content=10&ranMID=40328&ranSiteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&utm_campaign=je6NUbpObpQ&utm_medium=partners -->
+<p> how to sample triplets:
+there are 3 type of triplets:
+easy triplets (which have a loss of 0), d(A,N) > d(A,P) + alpha
+hard triplet where negative is closer to the anchir than the positive
+semi hard triplet: where the negative is not closer to the anchir than the positive but which is still have a positive loss
+see the image in the websitr
+
+Offline triplet mining
+list of triplet (i,j,k) and then batch.
+online triplet mining is more efficient
+batch images (B images)
+then find triplets (max B^3 triplets) and remove non valid triplets
+2 methods:
+batch all ()
+and batch hard ()
+according to https://arxiv.org/abs/1703.07737 batch hard seems better but it depends of the data
+
+implementation
+
+tensorflow/keras: keras-contrib
+https://github.com/omoindrot/tensorflow-triplet-loss/blob/master/model/triplet_loss.py
+addons
+
+
+</p> <!--https://omoindrot.github.io/triplet-loss -->
+
 		</div><!-- /.mainT -->
 		</div><!-- /.container -->
 
@@ -53,8 +91,8 @@
 		<footer>
     		<ul>
         		<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
-        		<li><a href="https://github.com/ludivinemv">github</a></li>
-						<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
+
+						<!--<li><a href="https://github.com/ludivinemv">github</a></li>-->						<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
 						<li><a href="https://www.linkedin.com/in/ludivine-morvan-884153151/">linkedin</a></li>
 			</ul>
 		</footer>
