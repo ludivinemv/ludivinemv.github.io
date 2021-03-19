@@ -11,20 +11,22 @@
 		<nav>
 			<ul>
 				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../about.html">About me</a></li>
+				<li><a href="../../work.html">Current work</a></li>
 				<li><a href="../../cv.html">CV</a></li>
 				<li><a href="../../publication.html">Publications</a></li>
 				<li><a href="../../tutorial.html">Tutorials</a></li>
 			</ul>
 		</nav>
-		
+
 		<div class="container">
 			<div class="tutoNavig">
 				<ul>
 					<li><a class='t1' href="../survival/survival.html">Survival</a></li>
 					<ul>
 						<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
-						<li><a class='t2' href="../survival/kaplanM.html">Kaplan Meier</a></li>
-						<li><a class='t2' href="../survival/Cox.html">Cox</a></li>
+						<li><a class='t2' href="../survival/kaplanM.html">Non-parametrics methods</a></li>
+						<li><a class='t2' href="../survival/Cox.html">Semi-parametrics methods</a></li>
 						<li><a class='t2' href="../survival/RSF.html">RSF</a></li>
 					</ul>
 					<li><a class='t1' href="../MachineLearning/generalities.html">Machine
@@ -45,7 +47,7 @@
 			</div><!-- /.tutoNavig -->
 
 			<div class="mainT">
-				
+
 				<div class=arrow>
 					<div class=previous>
 						<a href= 'survival.html'> <image src=../../previous.png alt='next'
@@ -73,18 +75,18 @@
 					a time <em>t</em> is just living
 					before <em>t</em> and not die at time <em>t</em> (The event will be
 					considered as death in this part, well
-					whether it is a relapse or a recovery). Let <em>t" <t' <t</em>,</p>
+					whether it is a relapse or a recovery). Let <em> t &rdquo; 	&lsaquo; t &sbquo; 	&lsaquo; t </em>,</p>
 				<p> $$P(X > t) = P(X > t|X>t') * P(X > t'|X>t") * P(X > t") $$</p>
 
 
 				<p>The equation presents the probability of survival at time <em>t</em> as
 					the product of :</p>
 				<ul>
-					<li> the probability of survival at time <em>t</em> knowing that death did
+					<li>P(X > t|X>t') the probability of survival at time <em>t</em> knowing that death did
 						not occur at time <em>t'</em>,
-						<li>the probability of survival at time <em>t'</em> knowing that death did
+						<li> P(X > t'|X>t")  the probability of survival at time <em>t'</em> knowing that death did
 							not occur at time <em>t"</em>,
-							<li>and the probability of survival at time <em>t"</em>.
+							<li>and P(X > t") the probability of survival at time <em>t"</em>.
 							</ul>
 
 							<p>By considering the times of distinct events (death and censorship)
@@ -140,8 +142,7 @@
 										height of the step proportional to the number of events). This is
 										illustrated in <a href=#cvk>figure</a>
 										The Kaplan-Meier equivalent method is the actuarial method. It differs
-										in that the calculations do not
-										are not made at the time when events occur but at regular fixed times,
+										in that the calculations are not made at the time when events occur but at regular fixed times,
 										which gives a curve
 										in straight line segments.</p>
 

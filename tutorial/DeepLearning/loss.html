@@ -8,6 +8,8 @@
 	<nav>
 			<ul>
 				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../about.html">About me</a></li>
+				<li><a href="../../work.html">Current work</a></li>
 				<li><a href="../../cv.html">CV</a></li>
 				<li><a href="../../publication.html">Publications</a></li>
 				<li><a href="../../tutorial.html">Tutorials</a></li>
@@ -15,27 +17,29 @@
 	</nav>
 	<div class="container">
 		<div class="tutoNavig">
+			<ul>
+				<li><a class='t1' href="../survival/survival.html">Survival</a></li>
 				<ul>
-					<li><a href="tutorial/survival/survival.html">Survival</a></li>
-							<ul>
-								<li><a href="../survival/survival.html">Generalities</a></li>
-								<li><a href="../survival/kaplanM.html">Kaplan Meier</a></li>
-								<li><a href="../survival/Cox.html">Cox</a></li>
-								<li><a href="../survival/RSF.html">RSF</a></li>
-							</ul>
-					<li><a href="./tutorial/MachineLearning/generalities.html">Machine learning</a></li>
-							<ul>
-								<li><a href="../MachineLearning/generalities.html">Generalities</a></li>
-								<li><a href="../MachineLearning/svm.html">SVM</a></li>
-								<li><a href="../MachineLearning/RF.html">Random Forest</a></li>
-							</ul>
-					<li><a href="./tutorial/DeepLearning/generalities.html">Deep learning</a></li>
-							<ul>
-								<li><a href="../DeepLearning/generalities.html">Generalities</a></li>
-								<li><a href="../DeepLearning/layers.html">Layers</a></li>
-								<li><a href="../DeepLearning/loss.html">Losses</a></li>
-							</ul>
+					<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
+					<li><a class='t2' href="../survival/kaplanM.html">Non-parametrics methods</a></li>
+					<li><a class='t2' href="../survival/Cox.html">Semi-parametrics methods</a></li>
+					<li><a class='t2' href="../survival/RSF.html">RSF</a></li>
 				</ul>
+				<li><a class='t1' href="../MachineLearning/generalities.html">Machine
+						learning</a></li>
+				<ul>
+					<li><a class='t2' href="../MachineLearning/generalities.html">Generalities</a></li>
+					<li><a class='t2' href="../MachineLearning/svm.html">SVM</a></li>
+					<li><a class='t2' href="../MachineLearning/RF.html">Random Forest</a></li>
+				</ul>
+				<li><a class='t1' href="../DeepLearning/generalities.html">Deep
+						learning</a></li>
+				<ul>
+					<li><a class='t2' href="../DeepLearning/generalities.html">Generalities</a></li>
+					<li><a class='t2' href="../DeepLearning/layers.html">Layers</a></li>
+					<li><a class='t2' href="../DeepLearning/loss.html">Losses</a></li>
+				</ul>
+			</ul>
 		</div><!-- /.tutoNavig -->
 
 
@@ -44,7 +48,7 @@
 			<p>Page in progress ...</p>
 
 				<h1> Triplet loss</h1>
-<p>if A= anchor, P= positive and N=negative (example of the faces)
+<!-- <p>if A= anchor, P= positive and N=negative (example of the faces)
 equation: we want d(A,P) < d(A,N) donc ||f(A) -f(P)||² inf ou egual ||f(A) -f(N)||²
 donc  Func = ||f(A) -f(P)||² -||f(A) -f(N)||² + alpha (evite  =0, = margin) car si = 0 ça veut dire que negative et positive equivalent
 L(A,P,N) = max(Func,0): loss pour un single triplet
@@ -54,7 +58,7 @@ si Func inf 0, max =0 mais si Func >0, positive loss
 Now, how to choose the triplet? first you need to have in your trainingset at least 2 individual fropm the same classes
 randomly? no because it is very to satisfy d(A,P)+ alpha < ou egual d(A,N) with this technique
 so we need triplet that are hard to satify the constraint (d(A,P) close to d(A,N))
-</p> <!-- https://www.coursera.org/lecture/convolutional-neural-networks/triplet-loss-HuUtN?utm_source=linkshare&siteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&ranEAID=je6NUbpObpQ&utm_content=10&ranMID=40328&ranSiteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&utm_campaign=je6NUbpObpQ&utm_medium=partners -->
+</p> ### https://www.coursera.org/lecture/convolutional-neural-networks/triplet-loss-HuUtN?utm_source=linkshare&siteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&ranEAID=je6NUbpObpQ&utm_content=10&ranMID=40328&ranSiteID=je6NUbpObpQ-2.2QYzNS1ly__rxwyZmcAQ&utm_campaign=je6NUbpObpQ&utm_medium=partners
 <p> how to sample triplets:
 there are 3 type of triplets:
 easy triplets (which have a loss of 0), d(A,N) > d(A,P) + alpha
@@ -79,8 +83,8 @@ https://github.com/omoindrot/tensorflow-triplet-loss/blob/master/model/triplet_l
 addons
 
 
-</p> <!--https://omoindrot.github.io/triplet-loss -->
-
+</p> ### https://omoindrot.github.io/triplet-loss 
+-->
 		</div><!-- /.mainT -->
 		</div><!-- /.container -->
 

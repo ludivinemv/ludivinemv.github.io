@@ -3,53 +3,55 @@ html,body {    margin:  0;
     height: 100%;
     }
     body {
-        display: flex;
-        flex-direction: column;
+       display:table;
+        /*flex-direction: column;*/
       }
-      
+
 /* Home navigation ---------------------------------------------------*/
-nav{  color:#ded9b4;
-  background-color: #0b3457;
+nav{  color:#FFFFFF; /*#ded9b4;*/
+  background-color:#000000;  /*#0b3457; */
   Display : flex;
   flex-direction: row;
-  Justify-content: space-around;
+  Justify-content: center;
   Align-items: center ;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 nav ul {    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+display: flex;
+  justify-content: space-between;
     padding: 0px;
     list-style: none;
     font-weight: bold; }
 nav ul li {    display: inline;
-    margin-right: 40px;
-    margin-left: 40px;}
+    margin-right: 20px;
+    margin-left: 20px;}
 
 nav a{    text-decoration: none;
-    color:#ded9b4;
+    color:#FFFFFF;
     list-style-type: none;}
 /* Tutorial navigation ------------------------------------------------- */
 
 .tutoNavig a {    text-decoration: none;
-    color:#ded9b4;
+    color:#FFFFFF;
     list-style-type: none;
 
     flex: 1 0 auto; }
 
 .tutoNavig{
   Width : 30%;
-  color:#ded9b4;
-  background-color: #0b3457;
+  color:#FFFFFF;
+  background-color: #000000;
   word-wrap: break-word;
   list-style-type: none;
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto 
+  margin: 0 auto
   align-self: start;}
 
-.tutoNavig ul{  color:#ded9b4;
-  background-color: #0b3457;
+.tutoNavig ul{  color#FFFFFF;
+  background-color: #000000;
   word-wrap: break-word;
   list-style-type: none;
     margin: 0;}
@@ -62,8 +64,8 @@ nav a{    text-decoration: none;
 /* footer  ------------------------------------------------- */
 footer {    border-top: 1px solid #d5d5d5;
     font-size: .8em;
-
-    flex-shrink: 0;}
+    flex-shrink: 0;
+  }
 
 footer ul {        font-family:'Helvetica', 'Arial', 'Sans-Serif';
         padding: 0px;
@@ -77,14 +79,17 @@ a {    text-decoration: none;
     color: #999; }
 
 a:hover {    text-decoration: underline;}
-h1 {    font-size: 3em;
+a:active{  background-color:#dfdcc7;;
+        color:black;
+    }
+h1 {    font-size: 1.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';}
 p {    font-size: 1em;
     line-height: 1.4em;
     text-align: justify;
     color: #333;}
     ul{
-        
+
     color: #333;
     }
 ul.posts {        margin: 20px auto 40px;
@@ -109,6 +114,7 @@ iframe {    width: 100%;
     background: black;}
 .cv{
     background-color: #dfdcc7;
+        min-height: calc(100vh - 203.4px);
 
 }
 /* home ------------------------------------------------- */
@@ -120,10 +126,11 @@ iframe {    width: 100%;
 
 /* personalised classes text------------------------------------------------- */
 
-.intro {    font-size: 1.3em; /* larger text */
+.intro {    font-size: 1em; /* larger text */
 text-align: justify;
     line-height: 1.4em;
     color: #333;}
+
 .comment{font-style: italic;}
 
 .equation
@@ -148,8 +155,32 @@ text-align: justify;
     flex-grow: 1;
     justify-content: flex-start;
     background-color: #dfdcc7;
+    min-height: calc(100vh - 203.4px);
 }
+body > div{
+    display:table-row;
+}
+.entete
+{
+    display:flex;
+    height:100px;
+    justify-content:flex-start;
+    color:#FFFFFF; /*#ded9b4;*/
+    background-color:#000000;  /*#dfdcc7; */
+}
+.entete img{
+    border-color:#000000;  /*#dfdcc7; */
+    border-width: 5px;
+    width:5em;
+  height: auto;
+    border-style: solid;
+    margin-left: 20px;
 
+}
+.entete h2{
+    font-size:2em;
+    margin-left: 100px;
+}
 .mainT{
   padding-left: 30px;
   padding-right: 30px;

@@ -11,6 +11,8 @@
 		<nav>
 			<ul>
 				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../about.html">About me</a></li>
+				<li><a href="../../work.html">Current work</a></li>
 				<li><a href="../../cv.html">CV</a></li>
 				<li><a href="../../publication.html">Publications</a></li>
 				<li><a href="../../tutorial.html">Tutorials</a></li>
@@ -22,8 +24,8 @@
 					<li><a class='t1' href="../survival/survival.html">Survival</a></li>
 					<ul>
 						<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
-						<li><a class='t2' href="../survival/kaplanM.html">Kaplan Meier</a></li>
-						<li><a class='t2' href="../survival/Cox.html">Cox</a></li>
+						<li><a class='t2' href="../survival/kaplanM.html">Non-parametrics methods</a></li>
+						<li><a class='t2' href="../survival/Cox.html">Semi-parametrics methods</a></li>
 						<li><a class='t2' href="../survival/RSF.html">RSF</a></li>
 					</ul>
 					<li><a class='t1' href="../MachineLearning/generalities.html">Machine
@@ -55,9 +57,43 @@
 									title='RSF' width=15% height=15%/> </a>
 							</div> <!-- /.next -->
 						</div> <!-- /.arrow -->
-				<h1>Cox model</h1>
-				<p>Page in progress ...</p>
 
+					<h1>Semi-parametrics methods</h1>
+				<h2>Cox model</h2>
+				<p>
+					Cox's model can be found a lot in the literature. Primrose et al [13] use it for example to study the effect of the adjuvant capecitabine on patient survival after cholangiocarcinoma or gallbladder cancer resection surgery.
+					It is used when the objective is to evaluate the effect of covariates over the lifetime. It helps to explain the occurrence of a qualitative event over time by one or more explanatory variables (respectively univariate and multivariate analysis)
+					 which can be qualitative or quantitative. For each of the variables present in the final model, we obtain an estimate of the relative risk (hazard ratio) of the occurrence of death in the presence of the variable, and its confidence interval.
+					The hazard ratio is equal to the instantaneous relative risk of death adjusted for all the explanatory variables introduced in the model. This implies the hypothesis that the risk of death in the different study groups
+					is constant over time and similar across all subgroups.
+					A basic hazard function is introduced that gives the general form of hazard and is common to all individuals. Proportional hazard models are characterized by the relationship 3.14.
+					</p>
+					<p>	Let an individual i, for any t > 0 :	</p>
+
+					<p>$$&lambda;(t|Z_{i}) = &lambda;_{0}(t) x h(&beta;,Z_{i})	 $$ </p>
+					<p> with:</p>
+					<ul>
+						<li> Zi = (Zi1,...,Zip) is a vector of p-dimensional covariates of the individual i (the covariates being
+								individual-specific variables that may influence the output of the model),
+							<li> $beta; the parameter of interest (does not depend on time t) of dimension p, which represents the effect of the covariates
+									on instantaneous risk
+								<li> h a positive function of hazard.
+								</ul>
+
+				<p>		This model is said to have proportional risks because, whatever two individuals i and j whose covariates are the
+		vectors Zi and Zj , the ratio of the hazard functions does not vary over time.
+					$$     \frac{&lambda;(t| Z_{i})}{&lambda;(t|Z_{j})}  = \frac{h(\beta*Z_{i})}{h(\beta*Z_{j})} $$
+		A very important special case is the Cox model, which assumes that the function h is the exponential function,
+		i.e., by developing the vectors , the equation :
+		$$ &lambda;(t|(Z_{i1}, ... Z_{ip}) = &lambda;_{0}(t)e^{&beta;_{1}*Z_{i1} + ... + &beta;_{p}*Z_{ip}}$$
+
+		Other choices of h functions are possible, nevertheless the exponential function is very often used in the literature because its values are always positive and exponential of 0 equal 1.
+		$$e^{\beta_{0} Z_{i}} $$is called relative risk. </p>
+
+		<p>	The principle of the method is to estimate only the regression coefficient &beta;, which corresponds to the effect of the covariates on the instantaneous risk. They are obtained by the maximum likelihood method, and more particularly the partial likelihood method, which includes information on the coefficients &beta;i [for more details see P. Saint-Pierre's paper \cite{15pStpierre}].
+		 The function &lambda;0 is considered as a basic risk. Cox's idea is that no information can be given on &beta; by the intervals during which no events occurred, because it is conceivable that &lambda;0 is null in these intervals (It is assumed that the moments when censoring occurs bring little or no information on &beta;)\cite{15pStpierre}.
+		Cox's model is adapted to data with variable follow-up times between subjects and censored data. If the follow-up period is fixed and there is no censored data, the logistic regression model is as suitable as the Cox model.
+	 </p>
 				<div class=arrow>
 					<div class=previous>
 						<a href= 'kaplanM.html'> <image src=../../previous.png alt='next' title='Kaplan

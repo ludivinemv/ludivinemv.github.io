@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ludivine Morvan, Deep learning for survival</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="entete">
+
+			<img src="photo.jpg" alt="photo" />
+			<h2>Ludivine Morvan</h2>
+		</div>
+
+		<nav>
+
+    		<ul>
+					<li>
+        		<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About me</a></li>
+						<li><a href="work.html">Current work</a></li>
+        		<li><a href="cv.html">CV</a></li>
+	        	<li><a href="publication.html">Publications</a></li>
+        		<li><a href="tutorial.html">Tutorials</a></li>
+    		</ul>
+		</nav>
+		<div class="container">
+    		<div class="mainT">
+<p> I am currently working as PhD student at the CRCINA (Centre de Recherche en Cancerologie et Immunologie Nantes Angers), INSERM, NANTES
+	and at the LS2N (Laboratoire des Sciences du Numérique de Nantes) in the SIMS team since March 2018.
+	The purpose of my thesis is to do survival analysis and find biomarkers of  multiple myeloma, a bone marrow cancer, using clinical data, PET images, and in the future CT-scans. Data comes from the prospective and multicentric IMAJEM study <a href=https://www.ncbi.nlm.nih.gov/pubmed/28686535>[Moreau et al., 2017]</a></p>
+<h1> Context </h1>
+<p>
+	Artificial intelligence has made great strides in medicine, particularly in using the full potential of images for diagnosis and prognosis.
+	Indeed, machine learning methods can extract more information than would be possible visually. An emerging application in recent years is survival analysis.
+	This branch of statistics corresponds to an analysis over time of different factors in order to predict a time or a risk. <br>
+	The work is part of a 5-year project, the MILCOM project (Multi-modal Imaging and Learning for Computational-based Medicine).
+	The aim of this project is to help doctors to make a diagnosis and a prognosis with the aim of a personalised treatment, thanks to richer information specific to each patient.
+	In particular, my work aims to develop machine learning algorithms to quantitatively and reproducibly link PET (Positron Emission Tomography) and CT (Computed Tomography) images and survival of multiple myeloma patients.
+	Multiple myeloma is a bone marrow cancer characterised by a 5-year survival rate of about 50% and a high relapse rate. The chances of survival depend on the speed of management with the appropriate treatment.
+	The model developed aims to directly determine which patient profile is most likely to be at high risk and thus potentially adapt the treatment to the clinical situation.
+	Indeed, survival analysis is characterised by the potential presence of censoring and in particular right censoring (not observing the event of interest). It is because of this censoring that simple regression is not suitable.<br>
+	Two main families of methods are available to build a model adapted to survival: classical machine learning methods, in particular Random Survival Forests (RSF), or deep learning methods.
+	We therefore decided to work on two axes:
+	<ul>
+		<li>The first part is based on the RSFs which are now the reference in survival. This method requires less data and less computing time. </li>
+		<li>The second part is based on deep learning for which we are exploring the possibility of adapting this approach to our data. This is challenging for several reasons, including lack of data, limited spatial resolution of PET images and censoring.</li>
+	</ul>
+
+</p>
+<h1> Random Survival Forest (RSF)</h1>
+<h3> State of the art </h3>
+<p>It has been shown that Breiman forests perform better, especially when the number of features is large and the sample size is small.
+Thus, Ishwaran proposes Random Survival Forests (RSF) (Ishwaran et al., 2008), a method that is robust to censoring data and variable noise,
+and has become a reference for survival analysis.
+However, the method had not yet been tested in the context of multiple myeloma.
+Regarding the use of machine learning in general for multiple myeloma, only a few studies existed but only for segmentation and detection of focal lesions or using gene expression
+Finally, a preliminary study showed the value of intra-tumour heterogeneity (radiomics) for prognosis using FDG-PET images at diagnosis [3].
+Other studies have reported the prognostic value of SUV max, total metabolic volume of the tumour and total whole body glycolysis volume using PET images.
+To our knowledge, we are the first to explore the use of radiomics for multiple myeloma and to use RSF both as a biomarker selection and for prognostic purposes in multiple myeloma.
+</p>
+<h3>Data</h3>
+So far we are working with two prospective, multicentre databases (IMAJEM [1] and Bologna [6]) with images (PET and CT) and clinical data. OS (time to death) and PFS (time to progression) values were collected over 7 years.
+<h3>The model</h3>
+<p>We proposed a three-part automatic PFS prediction model. As input to this model we use clinical data and radiomics of PET images with different calculation methods.
+The first part corresponds to the optimisation of the model by testing all combinations of hyperparameters such as the number of trees or the separation method.
+The second part corresponds to the selection of the best characteristics by VIMP (variable importance). Indeed, we are in a high dimensional situation (more variables than patients), so pre-selection is essential. This part provides a ranking of the features not only to select the variables that will be kept in the model, but also to determine which are the biomarkers of survival of multiple myeloma patients.
+Finally, the third part corresponds to the learning and prediction by RSF. A cross-validation is performed for each n with n being the number of best features kept among the total number of features. This allows us to select the number of variables that will give the best predictions. This part provides the mortality for each patient which can be related to the PFS, survival curves and a survival group (good or bad prognosis)
+</p>
+
+<h3>Results</h3>
+<p>The results are evaluated by the concordance index (C-index) or the prediction error (1- C-index), as well as the p-value which evaluates the separation of patients into two groups (good or bad prognosis).
+We showed the interest of our model (error: 0.36) compared to references such as Gradient boosting Cox (err.: 0.56) and Lasso Cox (err.: 0.48). We evaluated the use of VIMP compared to minimum depth (MD) (err.: 0.47) and variable hunting (VH) (err.: 0.43) but also without selection (err.: 0.61) to show its importance. We tested the importance of the use of radiomics with clinical data (err.: 0.34) compared to their use alone (err.: 0.36) or to clinical data alone (err. 0.45). Finally, we determined radiomic and clinical biomarkers, as well as a more efficient method of radiomic calculations.
+</p>
+
+
+<h1> Adapt Deep learning to our data</h1>
+<p>Although FSRs have given promising results, we believe that it is possible to improve these results by using deep learning and in particular CNNs (convolutional neural networks). However, these methods are not suitable for small samples, low image resolution combined with small lesion size and censoring in survival analysis.
+</p>
+<h3> State of the art </h3>
+<p>In the early days of this work, survival analysis methods using deep learning were rare. Early work extracted deep features from pre-trained networks and used them in Lasso-Cox or RSF models. The survival problem has been greatly simplified by classification into different groups (low and high risk) or regression but this does not allow for censored patients.
+Risk prediction methods adapt the Cox model as a loss function to account for censoring (the method chosen to begin with). We are particularly interested in low resolution PET images and in dealing with the variability of small lesions using attentional models and Spatial Pyramidal Pooling (SPP). To our knowledge, we are the only ones to use attention in the context of survival analysis with images. Finally, our work is the first to adapt CNNs for survival analysis of multiple myeloma from PET images only.</p>
+<h3>The model</h3>
+<p>We proposed a 3D model containing Spatial Pyramidal Pooling (SPP) and/or CBAM attention. The SPP will allow to manage the different lesion sizes but also to decrease the size of the model in order to reduce the risk of overlearning, and to speed up the computation. The attention will allow a better interpretability of the result and is composed of two parts: the spatial attention which will allow to know on which part of the lesion the network is concentrated and the attention on the channels which will allow to know if certain filters are more important than others.
+</p>
+<h3>Results</h3>
+<p>The results showed that our best model (cindex: 0.641), but also the simple 2D CNNs (cindex: 0.61) outperformed classical methods such as VIMP+RSF (cindex: 0.583). The addition of SPP improved the results of the 2D network (cindex: 0.639) and the attention to the 3D network (cindex: 0.641). The model allows to recover the importance of some filters and parts of the lesion, thus improving the interpretability.
+
+
+<h1> Conclusions and perspectives </h1>
+<p>We have thus created a method based on FRLs to predict the survival of multiple myeloma patients, to classify them into two groups (good and bad prognosis) and to predict the biomarkers of the disease. This method can be generalised to any disease and any modality. We have also highlighted the value of radiomics for survival prediction. This is the first time that survival analysis has been performed for patients with multiple myeloma.
+This method and results were published in the International Journal of Computer Assisted Radiology and Surgery (IJCARS) in 2020 [5] but also in the European Journal of Nuclear Medicine and Molecular Imaging (EJNMMI) [2] where the RSF model was used to assess the prognostic value of baseline PET image derived features in newly diagnosed patients eligible for transplantation. We are now working on its improvement.
+</p><p>In this second part of the thesis I focus on adapting deep learning to our data in order to create a model that solves the problems of lack of data, low resolution, small input image size and censoring. We have already created a model, proposed at the PRIME workshop, MICCAI 2020 [4]. We are now working on an improved and innovative model that will be submitted very soon.
+</p>
+<p>To conclude, the subject of the work is innovative, as few people are working on survival analysis and even less taking censorship into account. Deep learning is mainly used for segmentation or classification but very little used in the context of survival. It is also the first time that survival analysis has been performed in the context of multiple myeloma.
+</p>
+<p>There is a publication momentum as two papers have been published in journals (one medical and one more technical), another in an international conference [6] and a fourth is in the process of publication.
+</p>
+
+<h1>References </h1>
+<p>[1] <a href=https://jnm.snmjournals.org/content/58/supplement_1/111.short>T. Carlier, C. Bailly, R. Leforestier, C. Touzeau, P. Moreau, F. Bodere, and C. Bodet-Milin. Prognostic added value of pet textural features at diagnosis in multiple myeloma. Journal of Nuclear Medicine, 58(supplement 1):111, 2017.</a> <br>
+[2] <a href=https://doi.org/10.1007/s00259-020-05049-6>B. Jamet, L. Morvan, C. Nanni, A.-V. Michaud, C. Bailly, S. Chauvie, P. Moreau, C. Touzeau, E. Zamagni, C. Bodet-Milin, F. Kraeber-Bodéré, D. Mateus, and T. Carlier. Random survival forest to predict transplant-eligible newly diagnosed multiple myeloma outcome including fdg-pet radiomics: a combined analysis of two independent prospective european trials. European Journal of Nuclear Medicine and Molecular Imaging, pages1619–7089, 2020.</a> <br>
+[3] <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5578392/>P. Moreau, F. Caillon, and C. Bodet-Milin. Prospective evaluation of magnetic resonance imaging and [18f] fluorodeoxyglucose positron emission tomography-computed tomography at diagnosis and before maintenance therapy in symptomatic patients with multiple myeloma included in theifm/dfci 2009 trial: Results of the imajem study. Journal of Clinical Oncology, 35(25):2911–2918, 2017.</a> <br>
+[4] <a href=https://link.springer.com/chapter/10.1007/978-3-030-59354-4_4>L. Morvan, C. Nanni, A-V. Michaud, B. Jamet, C. Bailly, C. Bodet-Milin, S. Chauvie, C. Touzeau, P. Moreau, E. Zamagni, F. Kraeber-Bodéré, T. Carlier, and D. Mateus.  Learned deep radiomics for survival analysis with attention.  Predictive Intelligence in Medicine, pages 35–45. Springer International Publishing, 2020.</a> <br>
+[5] <a href=https://link.springer.com/article/10.1007/s11548-019-02015-y>L. Morvan, T. Carlier, B. Jamet, C. Bailly, C.  Bodet-Milin, P. Moreau, F. Kraeber-Bodéré, and D. Mateus. Leveraging rsf and pet images for prognosis of multiple myeloma at diagnosis. International Journal of Computer Assisted Radiology and Surgery, 15(1):129–139, 2020.</a> <br>
+[6] <a href=https://europepmc.org/article/med/29270787>C. Nanni, A. Versari, S. Chauvie, and et al. Interpretation criteria for fdg pet/ct in multiple myeloma (impetus): final results. Impetus (Italian myeloma criteria for pet use). European Journal of Nuclear Medicine and Molecular Imaging, 45:712–719, 2018</a> <br>
+
+</p>
+
+
+
+
+
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		<footer>
+    		<ul>
+        		<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
+        		<!--<li><a href="https://github.com/ludivinemv">github</a></li>-->
+						<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
+						<li><a href="https://www.linkedin.com/in/ludivine-morvan-884153151/">linkedin</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
