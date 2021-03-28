@@ -74,6 +74,8 @@ footer ul {        font-family:'Helvetica', 'Arial', 'Sans-Serif';
 footer ul li {        display: inline;
         margin-right: 40px;
         margin-left: 40px;    }
+
+
 /* general------------------------------------------------------------*/
 a {    text-decoration: none;
     color: #999; }
@@ -210,4 +212,14 @@ align-items: center;
 flex-direction: row;
 justify-content: flex-start;
 align-items: center;
+}
+
+.biblio p{
+  font-style:italic;
+}
+
+.h0{
+  font-size: 2em;
+  display: flex
+  justify-content: center;
 }

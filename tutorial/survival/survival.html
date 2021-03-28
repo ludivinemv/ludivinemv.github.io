@@ -8,6 +8,9 @@
 			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
+		<div class="entete">
+			<h2>Ludivine Morvan</h2>
+		</div>
 		<nav>
 			<ul>
 				<li><a href="../../index.html">Home</a></li>
@@ -59,6 +62,7 @@
 							title='Next page' width=15% height=15%/> </a>
 					</div> <!-- /.next -->
 				</div> <!-- /.arrow -->
+
 
 
 				<h1>Survival analysis</h1>
@@ -119,8 +123,7 @@
 					define the risk function (or hazard function) <em> h(t)</em> thats appears
 					to be a risk indicator: </p>
 
-				<p>$$h(t) = \lim_{\Delta t \to 0} \frac{Prob[t\leq T <t + \Delta t|T\geq
-						t]}{\Delta t} $$ </p>
+				<p>$$h(t) = \lim_{\Delta t \to 0} \frac{Prob[t \leq T < t + \Delta t|T \geq t]}{\Delta t} $$ </p>
 
 				<p>We can also define the cumulated risk<em> H(t) </em> defined by: </p>
 				<p> $$H(t) = \int_{0}^{t}h(s)ds $$</p>
@@ -132,18 +135,34 @@
 					methods exist to estimate this function and particularly the survival
 					function.</p>
 				<ul>
-					<li> Non-parametrics methods: use when no hypothesis can be done on the
+					<li> <b> Parametrics methods </b>: need hypothesis on the survival distribution
+				time. Example: the Weibull model.</li>
+					<li> <b>Non-parametrics methods</b>: use when no hypothesis can be done on the
 						survival distribution time. Example: Kaplan Meier and Nelson Aalen
 						methods.</li>
-					<li> Parametrics methods: need hypothesis on the survival distribution
-						time. Example: Proportional risk models.</li>
-					<li> Semi-parametrics methods: as the Cox model.</li>
+					<li> <b>Semi-parametrics methods</b>: Example: the Cox model.</li>
 				</ul>
+
 				<p>In addition of this statistical analysis models, it exists machine
 					learning methods, modified to be applied to survival analysis. First, we
 					will see the statistical methods, after the machine learning methods and
-					finally, deep learning methods (type of machin learning methods). </p>
+					finally, deep learning methods (type of machine learning methods). </p>
 
+
+
+					<h1>Statistical methods for survival analysis</h1>
+					<h2> Parametrics methods</h2>
+					<p>In a parametric survival model, as in classical regression models, one tries to relate an event to a number of explanatory variables.
+					This model is based on the assumption that survival times follow a distribution fixed a priori.
+					It applies to situations where a delay in the occurrence of an event is studied. One of the most widely used parametric models in the medical field is
+					the Weibull model. </p>
+						<p>We will not go into detail about parametric models but you can find more details in <a href=#bibliosurv>[1]</a> and <a href=#bibliosurv>[2]</a></p>
+
+							<div class=biblio id="bibliosurv">
+								<h1>References</h1>
+									<p>[1] Philippe Saint-Pierre. Introduction à l’analyse des durées de survie. Université Pierre et Marie Curie. </p>
+									<p>[2] Zhang Z. Parametric regression model for survival data: Weibull regression model as an example. Ann Transl Med. 2016;4(24):484. doi:10.21037/atm.2016.08.45 </p>
+						 	</div>
 				<div class=arrow>
 					<div class=previous>
 						<a href= '../../tutorial.html'> <image src=../../previous.png alt='next'
