@@ -44,9 +44,44 @@
 			</div><!-- /.tutoNavig -->
 
 			<div class="mainT">
-				<h1>Random Survival Forest</h1>
-				<p>Page in progress ...</p>
+				<h1>Machine learning methods</h1>
+				<h2>Random Survival Forest</h2>
+				<p> Before you can understand how Random Survival Forests work you must first be familiar with how Breiman Forests and Random Forests work
+					<a href="../MachineLearning/RF.html">[See chapter on trees]</a>.</p>
 
+				<p>The Random Survival Forest (RSF) method is a random forest method for survival analysis with right-censored data, presented by Ishwaran in 2008 <a href=#bibliorsf>[1]</a>.
+					The difference between the standard random forest method and RSF is that every aspect of the RSF construction takes into account the output (survival, censoring).
+					The characteristics of RSFs are as follows:</p>
+					<h4>The output of the model: mortality </h4>
+					<h4>The evaluation method: the Cindex </h4>
+					<h4>The method of separation of nodes: the Logrank </h4>
+					<p>Ishwaran presents 4 methods of node separation:</p>
+
+
+					    \item Le log Rank : pour chaque caractéristique $\theta$ du sous-ensemble $X_{in}$, et pour différentes valeurs \textit{c} de cette caractéristique , on calcule la valeur du test du logRank pour la séparation du groupe de patients en deux par la caractéristique donnée avec le seuil à la valeur donnée. Le log rank se calcule sur les données de survie des patients. La meilleure caractéristique sera celle qui aura le résultat de log rank le plus haut et la séparation dans les nœuds fils se fera au seuil qui donne le plus haut résultat de logrank. Définissons que lorsque $\theta_{ij} \leq c$ l'individu i est inscrit dans le noeud fils gauche, et dans le noeud fils droit sinon.
+
+
+					    Soit $t_{1} < ... < t_{m}$ les temps distincts des évènements dans le noeud h, $d_{k,l}$ et $Y_{k,l}$ respectivement le nombre d'évènements et le nombre d'individus à risque au temps $t_{k}$ dans le noeud fils gauche ($d_{k,r}$ et $Y_{k,r}$ pour le fils droit), $Y_{k,s}$ le nombre d'individus dans les noeuds fils (avec $s \in \{l,r\} $) qui n'avait pas eu d'évènement à pas d'évènement à $t_{k-1}$. Définissons  $Y_{k}$ = $Y_{k,l}$ + $Y_{k,r}$ et $d_{k}$ = $d_{k,l}$ + $d_{k,r}$. Appelons $n_{s}$ le nombre total d'individus dans le noeud fils s, et $n=n_{l}+ n_{r}$.
+					    La valeur du test logRank pour la variable $\tau$ et la valeur c est :
+					    \begin{equation}
+					        L(\theta,c)=\frac{\sum_{k=1}^{m} (d_{k,l} - Y_{k,l} \frac{d_{k}}{Y_{k}}}{\sqrt{\sum_{k=1}^{m}\frac{Y_{k,l}}{Y_{k}} ( 1-\frac{Y_{k,l}}{Y_{k}}) \frac{Y_{k} - d_{k}}{Y_{k}-1})d_{k}}}
+					    \end{equation}
+					    La valeur absolue de absolue $L(\theta,c)$ mesure la séparation. Plus elle est élevée et meilleure est la différence entre les deux groupes
+					    \item Le logrank random : cette méthode est équivalente au logrank mais il n’y a, ici, pas de test sur différentes valeurs. Seule une valeur aléatoire est prise par caractéristique  $\tau$.
+					\end{itemize}
+
+
+
+
+					<h4>The importance of the variables : VIMP </h4>
+
+
+<div class=biblio id="bibliorsf">
+	<h1>References</h1>
+	<p>[1] H. Ishwaran, U. Kogalur et al. Random surival forest. The annals of applied statistics, 2(3) :841–860. </p>
+		<p>[2]  </p>
+		<p>[3]  </p>
+</div>
 				<div class=arrow>
 					<div class=previous>
 						<a href= 'Cox.html'> <image src=../../previous.png alt='next' title='Cox'
