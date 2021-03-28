@@ -61,7 +61,7 @@
 					<h1>Semi-parametrics methods</h1>
 				<h2>Cox model</h2>
 				<p>
-					Cox's model can be found a lot in the literature. Primrose et al [13] use it for example to study the effect of the adjuvant capecitabine on patient survival after cholangiocarcinoma or gallbladder cancer resection surgery.
+					Cox's model can be found a lot in the literature. Primrose et al <a href=#bibliokm>[1]</a>] use it for example to study the effect of the adjuvant capecitabine on patient survival after cholangiocarcinoma or gallbladder cancer resection surgery.
 					It is used when the objective is to evaluate the effect of covariates over the lifetime. It helps to explain the occurrence of a qualitative event over time by one or more explanatory variables (respectively univariate and multivariate analysis)
 					 which can be qualitative or quantitative. For each of the variables present in the final model, we obtain an estimate of the relative risk (hazard ratio) of the occurrence of death in the presence of the variable, and its confidence interval.
 					The hazard ratio is equal to the instantaneous relative risk of death adjusted for all the explanatory variables introduced in the model. This implies the hypothesis that the risk of death in the different study groups
@@ -90,10 +90,18 @@
 		Other choices of h functions are possible, nevertheless the exponential function is very often used in the literature because its values are always positive and exponential of 0 equal 1.
 		$$e^{\beta_{0} Z_{i}} $$is called relative risk. </p>
 
-		<p>	The principle of the method is to estimate only the regression coefficient &beta;, which corresponds to the effect of the covariates on the instantaneous risk. They are obtained by the maximum likelihood method, and more particularly the partial likelihood method, which includes information on the coefficients &beta;i [for more details see P. Saint-Pierre's paper \cite{15pStpierre}].
-		 The function &lambda;0 is considered as a basic risk. Cox's idea is that no information can be given on &beta; by the intervals during which no events occurred, because it is conceivable that &lambda;0 is null in these intervals (It is assumed that the moments when censoring occurs bring little or no information on &beta;)\cite{15pStpierre}.
+		<p>	The principle of the method is to estimate only the regression coefficient &beta;, which corresponds to the effect of the covariates on the instantaneous risk. They are obtained by the maximum likelihood method, and more particularly the partial likelihood method, which includes information on the coefficients &beta;i
+			[for more details see P. Saint-Pierre's paper <a href=#bibliokm>[2]</a>].
+		 The function &lambda;0 is considered as a basic risk. Cox's idea is that no information can be given on &beta; by the intervals during which no events occurred, because it is conceivable that &lambda;0 is null in these intervals (It is assumed that the moments when censoring occurs bring little or no information on &beta;)
+		<a href=#bibliokm>[2]</a>].
 		Cox's model is adapted to data with variable follow-up times between subjects and censored data. If the follow-up period is fixed and there is no censored data, the logistic regression model is as suitable as the Cox model.
 	 </p>
+
+	 									<div class=biblio id="bibliokm">
+	 										<p>[1] Primrose et al. Adjuvant capecitabine for biliary tract cancer : The bilcap randomized study. Journal of Clinical Oncology, 35(15 suppl) :4006–4006, 2017. </p>
+	 										<p>[2] Philippe Saint-Pierre. Introduction à l’analyse des durées de
+	 											survie. Université Pierre et Marie Curie. </p>
+	 									</div>
 				<div class=arrow>
 					<div class=previous>
 						<a href= 'kaplanM.html'> <image src=../../previous.png alt='next' title='Kaplan
