@@ -61,6 +61,9 @@ nav a{    text-decoration: none;
 .t2{
     font-size: 1.2em;
 }
+.t3{
+    font-size: 1em;
+}
 /* footer  ------------------------------------------------- */
 footer {    border-top: 1px solid #d5d5d5;
     font-size: .8em;
@@ -81,8 +84,19 @@ a {    text-decoration: none;
     color: #999; }
 
 a:hover {    text-decoration: underline;}
-a:active{  background-color:#dfdcc7;;
+/*a:active{  background-color:#dfdcc7;;
         color:black;
+    }*/
+
+a.t3act{
+        font-size: 1em;
+        color: #AED6F1;
+        font-decoration:underline;
+    }
+a.t2act{
+        font-size: 1.2em;
+        color: #AED6F1;
+        font-decoration:underline;
     }
 h1 {    font-size: 1.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';}

@@ -25,18 +25,23 @@
 			<div class="tutoNavig">
 				<ul>
 					<li><a class='t1' href="../survival/survival.html">Survival</a></li>
-					<ul>
-						<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
-						<li><a class='t2' href="../survival/kaplanM.html">Non-parametrics methods</a></li>
-						<li><a class='t2' href="../survival/Cox.html">Semi-parametrics methods</a></li>
-						<li><a class='t2' href="../survival/RSF.html">RSF</a></li>
-					</ul>
-					<li><a class='t1' href="../MachineLearning/generalities.html">Machine
-							learning</a></li>
+						<ul>
+							<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
+							<li><a class='t2' href="../survival/kaplanM.html">Survival statistical learning</a></li>
+												<ul>
+												<li><a class='t3' href="../survival/kaplanM.html">Non-parametrics methods</a></li>
+												<li><a class='t3' href="../survival/Cox.html">Semi-parametrics methods</a></li>
+											</ul>
+							<li><a class='t2' href="../survival/RSF.html">Survival machine learning</a></li>
+												<ul>
+												<li><a class='t3act' href="../survival/RSF.html">RSF</a></li>
+											</ul>
+						</ul>
+					<li><a class='t1' href="../MachineLearning/generalities.html">Machine learning</a></li>
 					<ul>
 						<li><a class='t2' href="../MachineLearning/generalities.html">Generalities</a></li>
-						<li><a class='t2' href="../MachineLearning/svm.html">SVM</a></li>
-						<li><a class='t2' href="../MachineLearning/RF.html">Random Forest</a></li>
+						<li><a class='t2' href="../MachineLearning/Boosting.html">Supervised learning</a></li>
+						<li><a class='t2' href="../MachineLearning/PCA.html">Unsupervised learning</a></li>
 					</ul>
 					<li><a class='t1' href="../DeepLearning/generalities.html">Deep
 							learning</a></li>
@@ -49,6 +54,16 @@
 			</div><!-- /.tutoNavig -->
 
 			<div class="mainT">
+				<div class=arrow>
+					<div class=previous>
+						<a href= 'Cox.html'> <image src=../../previous.png alt='next' title='Semi-parametrics methods' width=12% height=12%/> &nbsp; Previous </a>
+						</div> <!-- /.previous -->
+
+						<div class=next>
+							<a href= '../MachineLearning/generalities.html'>Next &nbsp; <image src=../../next.png alt='next'
+									title='Machine learning - RSF' width=15% height=15%/> </a>
+							</div> <!-- /.next -->
+						</div> <!-- /.arrow -->
 				<h1>Machine learning methods for survival analysis</h1>
 				<h2>Random Survival Forest</h2>
 				<p> Before you can understand how Random Survival Forests work you must first be familiar with how Breiman Forests and Random Forests work
@@ -113,32 +128,69 @@
 						<li> <b>The conserve rule</b>: A conservation-of-events splitting rule where nodes are split by finding daughters closest to the conservation-of-events principle.</li>
  						<li> <b>The logrankscore</b>: this method is equivalent to the logrank but using a standardized log-rank statistic [Hothorn and Lausen (2003)].
 </ul>
-					<h4>The importance of the variables : VIMP </h4>
+					<h4>The importance of the variables </h4>
+					<ul>
+						<li> <b>VIMP (Variable importance):</b> The article by Ishwaran et al <a href=#bibliorsf>[1]</a>  gives a method for calculating the importance of variables (VIMP).
+							Its calculation consists of, for each characteristic :
 
-					<p>Page in progress ...</p>
+							<ul>
+								<li>Reconstruct the trees using the feature using OOB. When a node h uses
+								assign the individuals of node h randomly into the child nodes. Recalculate the prediction error
+								errvimp associated with the new forest.
+								</li>
+								<li> VIMP = errvimp - erroob
+								</li>
+
+								<figure>
+								<img id="vimp" src="./images/variableImp.png" alt="VIMP_calculation"
+									title="VIMP_calculation" height=75% width=75% />
+								<figcaption> Explanation of the VIMP calculation with the example of the gender feature. </figcaption>
+								</figure>
+							</ul>
+The larger the value of the VIMP, the more predictive value the feature has.
+						</li>
+						<li> <b>MD (Minimal Depth):</b> The minimal depth assesses the predictiveness of a variable assuming variables selected close to the root are
+more important <a href=#bibliorsf>[2]</a>.
+						</li>
+						<li> <b>VH (Variable Hunting):</b> It was defined for ultra-high dimensional problems. <a href=#bibliorsf>[2]</a> An RSF is fit to a random subset of
+data points, and a first group of variables is selected using minimal depth thresholding. Additional variables are then appended to the initial model in increasing order
+of minimal depth until the VIMP criterium stabilizes. The process is repeated several times, to finally retain the variables that appear most frequently over the trials.
+						</li>
+
+					</ul>
+
+					<p>If you are interested about more details on the importance of variables in RSFs, you can check the references above.</p>
 
 <div class=biblio id="bibliorsf">
 	<h1>References</h1>
-	<p>[1] H. Ishwaran, U. Kogalur et al. Random surival forest. The annals of applied statistics, 2(3) :841–860. </p>
+	<p>[1] H. Ishwaran, U. Kogalur et al. Random surival forest. The annals of applied statistics, 2(3) :841–860 (2008). </p>
+	<p>[2] H. Ishwaran, U. Kogalur et al. High-dimensional variable selection for survival data. J Am Stat Assoc 105(489):205–217 (2010). </p>
 
 </div>
-				<div class=arrow>
-					<div class=previous>
-						<a href= 'Cox.html'> <image src=../../previous.png alt='next' title='Cox'
-								width=12% height=12%/> &nbsp; Previous </a>
-						</div> <!-- /.previous -->
+<div class=arrow>
+	<div class=previous>
+		<a href= 'Cox.html'> <image src=../../previous.png alt='next' title='Semi-parametrics methods' width=12% height=12%/> &nbsp; Previous </a>
+		</div> <!-- /.previous -->
 
-						<div class=next>
-							<a href= '../MachineLearning/generalities.html'>Next &nbsp; <image
-									src=../../next.png alt='next' title='Machine learning' width=15%
-									height=15%/> </a>
-							</div> <!-- /.next -->
-						</div> <!-- /.arrow -->
+		<div class=next>
+			<a href= '../MachineLearning/generalities.html'>Next &nbsp; <image src=../../next.png alt='next'
+					title='Machine learning' width=15% height=15%/> </a>
+			</div> <!-- /.next -->
+		</div> <!-- /.arrow -->
 
 					</div><!-- /.mainT -->
 				</div><!-- /.container -->
 
+				<div class=arrow>
+					<div class=previous>
+						<a href= 'Cox.html'> <image src=../../previous.png alt='next' title='Semi-parametrics methods' width=12% height=12%/> &nbsp; Previous </a>
+						</div> <!-- /.previous -->
 
+						<div class=next>
+							<a href= '../MachineLearning/generalities.html'>Next &nbsp; <image src=../../next.png alt='next'
+									title='Machine learning' width=15% height=15%/> </a>
+							</div> <!-- /.next -->
+						</div> <!-- /.arrow -->
 
 
 				<footer>
