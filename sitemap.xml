@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ludivinemv.github.io/index.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/about.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/work.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/cv.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/publication.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/cvEnglish.pdf</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/survival/survival.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/survival/kaplanM.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/survival/Cox.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/survival/RSF.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/generalities.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/svm.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/RF.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/DeepLearning/generalities.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/DeepLearning/layers.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/DeepLearning/loss.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/Boosting.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/PCA.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ludivinemv.github.io/tutorial/MachineLearning/kmeans.html</loc>
+  <lastmod>2021-05-12T10:56:25+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
