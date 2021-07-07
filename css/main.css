@@ -164,6 +164,18 @@ text-align: justify;
     border-width: 5px;
     border-style: solid;
       }
+
+.codage
+{
+        background-color: #1D262C;
+        font-style: italic;
+        text-align: center;
+          padding: 1px;
+          padding-left: 1px;
+          border-width: 5px;
+          border-style: solid;
+          color: whitesmoke;
+}
 /* personalised classes container ------------------------------------------------- */
 
 .container
