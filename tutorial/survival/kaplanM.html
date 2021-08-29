@@ -84,12 +84,12 @@
 					median survival and the survival rate at
 					a given time but also to compare the survival of different populations,
 					often by the logrank test <a href=#ElogRank>[see logRank inset]</a>.
-					The Kaplan-Meier estimator is based on the following idea: surviving after
+					Thus it is considered that survival after
 					a time <em>t</em> is just living
 					before <em>t</em> and not die at time <em>t</em> (The event will be
 					considered as death in this part, well
 					whether it is a relapse or a recovery). Let <em> t &rdquo; 	&lsaquo; t '	&lsaquo; t </em>,</p>
-				<p> $$P(X > t) = P(X > t|X>t') * P(X > t'|X>t") * P(X > t") $$</p>
+				<p> $$P(X > t) = P(X > t|X>t') * P(X > t'|X>t'') * P(X > t'') $$</p>
 
 
 				<p>The equation presents the probability of survival at time <em>t</em> as
@@ -102,28 +102,27 @@
 							<li>and P(X > t") the probability of survival at time <em>t"</em>.
 							</ul>
 
-							<p>By considering the times of distinct events (death and censorship)
-								<em>T<sub>i</sub>(i = 1,...,n)</em> arranged in ascending order, one can
-								obtains the probability of survival at time <em>T<sub>i</sub></em> by
-								taking the product of the probability of survival at each time <em>T<sub>k</sub><sub>i</sub></em>
-								knowing that the death did not occur at time <em>T<sub>k</sub><sub>1</sub></em>:</p>
-							<p> $$P(X > t) = \prod_{k=1}^i P(X > T_{k}|X > T_{k-1}) , with T_{0} = 0
-								$$</p>
+							<p>By considering the times of distinct events <em>T<sub>j</sub>(j = 1,...,n)</em> arranged in ascending order, one can
+								obtains the probability of survival at time <em>T<sub>j</sub></em> by
+								taking the product of the probability of survival at each time <em>T<sub>k &le; j </sub></em>
+								knowing that the death did not occur at time <em>T<sub>k-1</sub></em>:</p>
+							<p> $$P(t_{i} > T_{j}) = \prod_{k=1}^j P(t_{i} > T_{k}|t_{i} > T_{k-1}) $$</p>
 
-							<p>Consider the following ratings:</p>
+							<p>Considering:</p>
 							<ul>
-								<li> <em>Y<sub>i</sub></em> the number of individuals at risk for the
-									event just before time <em>T<sub>i</sub></em>,
-									<li> <em>d<sub>i</sub></em> the number of events in <em>T<sub>i</sub></em>
+								<li> <em>Y<sub>j</sub></em> the number of individuals at risk just before time <em>T<sub>j</sub></em>,
+									<li> <em>d<sub>j</sub></em> the number of events in <em>T<sub>j</sub></em>
 										.
 									</ul>
-									<p>Then the probability <em>p<sub>i</sub></em> of having an event in
-										the interval<em>]T<sub>i</sub><sub>1</sub>,T<sub>i</sub>]</em> knowing
-										that one was alive in <em>T<sub>i</sub><sub>1</sub></em>,
-										i.e., <em>p<sub>i</sub>= P(X <= T<sub>ij</sub> |X > Y<sub>i</sub><sub>1</sub>)</em>,
+									<p>Then the probability <em>p&#770;<sub>j</sub></em> of having an event in
+										the interval<em>]T<sub>j-1</sub>,T<sub>j</sub>]</em> knowing
+										that one was alive in <em>T<sub>j-1</sub></em>,
+										i.e., <em>p&#770;<sub>j</sub>= P(t<sub>i</sub> &le; T<sub>j</sub> |t<sub>i</sub> > T<sub>j-1</sub>)</em>,
 										can be estimated by :</p>
-									<p> $$p_{i}=\frac{d_{i}}{Y_{i}}$$</p>
-
+									<p> $$p&#770;_{j}=\frac{d_{j}}{Y_{j}}$$</p>
+									<p> When the times are assumed to be distinct, <em>d<sub>j</sub>=0</em> when <em>&sigma;<sub>j</sub>=0</em> (censorship), and <em>d<sub>j</sub>=1</em>
+										when <em>&sigma;<sub>j</sub>=1</em>. The equation below thus gives the Kaplan-Meier estimator:</p>
+										<p> $$ \hat{S}(t)=	\prod_{j=1,...,n, T_{j &le; t}}	(1 - \frac{&sigma;_{j}}{Y_{j}})$$</p>
 									<div class=encare id="ElogRank">
 										<B style="font-size:1.1em"> Log Rank</B>
 										<p>In this context, the log rank is calculated on the survival data of
@@ -137,13 +136,12 @@
 
 
 
-									<p> Survival curves can thus be plotted on a graph in the following
-										way: usually with a 95% confidence interval. These graphs
-										s allow, in particular, to see clearly the difference between the
+									<p> Survival curves can thus be plotted on a graph, usually with a 95% confidence interval. These graphs
+										allow to see clearly the difference between the
 										survival curves of two groups.</p>
 									<figure>
 										<img id="cvk" src="./images/ex_kaplan.png" alt="kaplan_Meier_curve"
-											title="KM_curves" height=25% width=25% />
+											title="KM_curves" height=60% width=60% />
 										<figcaption> Example of Kaplan Meier curves showing the survival of
 											two groups. In pink, the women
 											and men in blue. Reading: 75% of the women are alive at 1000 days against 50% for men.</figcaption>
@@ -153,7 +151,7 @@
 										unequal, where the occurrence of one or more events on the same date
 										represents the vertical of a step (the
 										height of the step proportional to the number of events). This is
-										illustrated in <a href=#cvk>figure</a>
+										illustrated in the <a href=#cvk>figure</a>
 										The Kaplan-Meier equivalent method is the actuarial method. It differs
 										in that the calculations are not made at the time when events occur but at regular fixed times,
 										which gives a curve
@@ -173,28 +171,24 @@
 
 									<p>$$ S(t) = e^{-H(t)} $$</p>
 									<p> The idea is to estimate <em>S(t)</em> from an estimator of <em>H(t)</em>.
-										By considering all the instants <em>Ti</em> where
+										By considering all the instants <em>T<sub>j</sub></em> where
 										events occur up to time <em>t</em>, we have:</p>
 
-									<p>$$ \hat{H}(t) = \sum_{T_{i} <=t} \Rightarrow \hat{S}(t)=e^{
+									<p>$$ \hat{H}(t) = \sum_{T_{j} &le; t} \Rightarrow \hat{S}(t)=e^{
 											\hat{H}(t)} $$</p>
 
-									<p> with <em>di</em> the number of events occurring in <em>Ti</em>, and
-										<em>Yi</em>the number of individuals at risk of the event
-										just before the time <em>Ti</em></p>
+									<p> with <em>d<sub>j</sub></em> the number of events occurring in <em>T<sub>j</sub></em>, and
+										<em>Y<sub>j</sub></em>the number of individuals at risk of the event
+										just before the time <em>T<sub>j</sub></em></p>
 
 									<h3> Comparison between Kaplan-Meier and Nelson-Aelen</h3>
 									<p> Asymptotically, Kaplan-Meier and Nelson-Aalen are equivalent.
-										However, it is preferable to use
-										Kaplan-Meier when the hazard decreases over time, on small samples,
-										and Nelson-Aalen when the
-										chance increases over time.
+										However, it is preferable to use Kaplan-Meier when the hazard decreases over time, on small samples,
+										and Nelson-Aalen when the chance increases over time.
 										Other estimators exist such as the Breslow estimator of cumulative
-										risk, the Harrington estimator, and
-										Fleming of survival. [For more details see the course of A.
+										risk, the Harrington estimator, and	Fleming of survival. [For more details see the course of A.
 										Berchtold's <a href=#bibliokm>[3]</a> or that of P. Saint-Pierre <a
-											href=#bibliokm>[2]</a>,
-										from which the definitions are taken].</p>
+											href=#bibliokm>[2]</a>,	from which the definitions are taken].</p>
 
 									<div class=biblio id="bibliokm">
 										<h1>References</h1>
