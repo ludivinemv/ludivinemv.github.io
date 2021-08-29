@@ -71,43 +71,29 @@
 					<h2>Semi-parametrics methods</h2>
 				<h3>Cox model</h3>
 				<p>
-					Cox's model  <a href=#bibliocox>[1]</a>] can be found a lot in the literature. Primrose et al <a href=#bibliocox>[2]</a>] use it for example to study the effect of the adjuvant capecitabine on patient survival after cholangiocarcinoma or gallbladder cancer resection surgery.
-					It is used when the objective is to evaluate the effect of covariates over the lifetime. It helps to explain the occurrence of a qualitative event over time by one or more explanatory variables (respectively univariate and multivariate analysis)
-					 which can be qualitative or quantitative. For each of the variables present in the final model, we obtain an estimate of the relative risk (hazard ratio) of the occurrence of death in the presence of the variable, and its confidence interval.
-					The hazard ratio is equal to the instantaneous relative risk of death adjusted for all the explanatory variables introduced in the model. This implies the hypothesis that the risk of death in the different study groups
-					is constant over time and similar across all subgroups.
-					A basic hazard function is introduced that gives the general form of hazard and is common to all individuals. Proportional hazard models are characterized by the relationship 3.14.
+					Cox's model  <a href=#bibliocox>[1]</a> can be found a lot in the literature. Primrose et al <a href=#bibliocox>[2]</a> use it for example to study the effect of the adjuvant capecitabine on patient survival after cholangiocarcinoma or gallbladder cancer resection surgery.
+					It is used when the objective is to evaluate the effect of covariates on survival time. It allows the occurrence of a qualitative event to be explained over time by one or more explanatory variables (univariate and multivariate analysis respectively) which may be qualitative or quantitative. For each of the variables present in the final model, we obtain an estimate of the relative risk (hazard ratio) of an event occurring in the presence of the variable, and its confidence interval. The hazard ratio is equal to The hazard ratio is equal to the instantaneous relative risk of the event adjusted for all the explanatory variables introduced into the model. This implies the assumption that the risk of death in the different study groups is constant over time and similar in all subgroups.
+					A basic hazard function is introduced that gives the general form of hazard and is common to all individuals. We introduce a basic hazard function h characterized by the relation 3.14.
 					</p>
 					<p>	Let an individual i, for any t > 0 :	</p>
 
-					<p>$$&lambda;(t|Z_{i}) = &lambda;_{0}(t) x h(&beta;,Z_{i})	 $$ </p>
+					<p>$$h(t|X_{i}) = h_{0}(t) x f(&beta;,X_{i})	 $$ </p>
 					<p> with:</p>
 					<ul>
-						<li> Zi = (Zi1,...,Zip) is a vector of p-dimensional covariates of the individual i (the covariates being
+						<li> <em>X<sub>i</sub> = (X<sub>i1</sub>,...,X<sub>ip</sub>)</em> a vector of p-dimensional covariates of the individual i (the covariates being
 								individual-specific variables that may influence the output of the model),
-							<li> $beta; the parameter of interest (does not depend on time t) of dimension p, which represents the effect of the covariates
+							<li> &beta; the parameter of interest (does not depend on time t) of dimension p, which represents the effect of the covariates
 									on instantaneous risk
-								<li> h a positive function of hazard.
+								<li> <em>f</em> a positive function of hazard.
 								</ul>
 
-				<p>		This model is said to have proportional risks because, whatever two individuals i and j whose covariates are the
-		vectors Zi and Zj , the ratio of the hazard functions does not vary over time.
-					$$     \frac{&lambda;(t| Z_{i})}{&lambda;(t|Z_{j})}  = \frac{h(\beta*Z_{i})}{h(\beta*Z_{j})} $$
-		A very important special case is the Cox model, which assumes that the function h is the exponential function,
-		i.e., by developing the vectors , the equation :
-		$$ &lambda;(t|(Z_{i1}, ... Z_{ip}) = &lambda;_{0}(t)e^{&beta;_{1}*Z_{i1} + ... + &beta;_{p}*Z_{ip}}$$
+				<p>	This model is said to have proportional risks because, whatever two individuals i and j whose covariates are the
+		vectors <em>X<sub>i</sub></em>  and <em>X<sub>j</sub></em>, the ratio of the hazard functions does not vary over time.
+					$$     \frac{&lambda;(t| X_{i})}{&lambda;(t|X_{j})}  = \frac{h(\beta*X_{i})}{h(\beta*X_{j})} $$
+		In the case of the Cox model, the function <em>f</em> is an exponential function, thus equation 3.14 becomes :
+		$$ &lambda;(t|(X_{i1}, ... X_{ip}) = &lambda;_{0}(t)e^{&beta;_{1}*X_{i1} + ... + &beta;_{p}*X_{ip}}$$ </p>
 
-		Other choices of h functions are possible, nevertheless the exponential function is very often used in the literature because its values are always positive and exponential of 0 equal 1.
-		 \( e^{\beta_{0} Z_{i}}  \) is called relative risk. </p>
-
-		<p>	The principle of the method is to estimate only the regression coefficient &beta;, which corresponds to the effect of the covariates on the instantaneous risk. They are obtained by the maximum likelihood method, and more particularly the partial likelihood method, which includes information on the coefficients &beta;i
-			[for more details see P. Saint-Pierre's paper <a href=#bibliocox>[3]</a>.
-		 The function &lambda;0 is considered as a basic risk. Cox's idea is that no information can be given on &beta; by the intervals during which no events occurred, because it is conceivable that &lambda;0 is null in these intervals (It is assumed that the moments when censoring occurs bring little or no information on &beta;)
-		<a href=#bibliocox>[3]</a>.
-		Cox's model is adapted to data with variable follow-up times between subjects and censored data. If the follow-up period is fixed and there is no censored data, the logistic regression model is as suitable as the Cox model.
-	 </p>
-
-
+		<p>	The principle is to estimate &beta;.  It is obtained by the maximum likelihood method, and more particularly the partial likelihood method which includes information on the coefficients <em>&beta;<sub>i</sub></em> <a href=#bibliocox>[3]</a>.
 
 	 	<div class=biblio id="bibliocox">
 			<h1>References</h1>

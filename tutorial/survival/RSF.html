@@ -87,6 +87,16 @@
 						$$ M_{i} = \sum_{k=1}^{m}  \hat{H}_{h}(t_{k}|X_{i})$$
 						The higher the mortality compared to other individuals, the greater the risk of an event (the event may be death, relapse or both in the case of PFS
 						(Progression-Free Survival) for example).</p>
+
+
+						<figure>
+						<img src="./images/exrsf.png" alt="RSF" title="RSF" height=80% width=80% />
+						<figcaption> Example of a survival tree, where the stopping criterion is to have a minimum of 15 individuals in a node to achieve a separation. Tree depth: 4.
+Furthermore, in survival the notion of censorship may be present, and more particularly right censorship. Right censorship is the failure to observe the event of interest to an individual.
+</figcaption>
+						</figure>
+
+
 					<h4>The evaluation method: the Cindex </h4>
 
 					<p>To evaluate the tree we use the prediction error which corresponds to 1 minus the concordance index
@@ -106,6 +116,12 @@
 									<li>The C-index, C, is defined by C = Concordance/Permissible. </li>
 				</ol>
  </p>
+ <figure>
+ <img src="./images/cindex.png" alt="c-index" title="C-index" height=80% width=80% />
+ <figcaption> The concordance index (C-index).</figcaption>
+ </figure>
+
+
 					<h4>The method of separation of nodes: the Logrank </h4>
 					<p>Ishwaran presents 4 methods of node separation:</p>
 					<ul>
@@ -145,13 +161,17 @@
 								</li>
 
 								<figure>
-								<img id="vimp" src="./images/variableImp.png" alt="VIMP_calculation"
+								<img id="vimp" src="./images/VIMP.png" alt="VIMP_calculation"
 									title="VIMP_calculation" height=75% width=75% />
-								<figcaption> Explanation of the VIMP calculation with the example of the gender feature. </figcaption>
+								<figcaption>
+Schematic of the calculation of the variable importance of the VIMP of the characteristic C.
+Furthermore, in survival the notion of censorship may be present, and more particularly right censorship. Right censorship is the failure to observe the event of interest to an individual.
+ </figcaption>
 								</figure>
 							</ul>
 The larger the value of the VIMP, the more predictive value the feature has.
 						</li>
+
 						<li> <b>MD (Minimal Depth):</b> The minimal depth assesses the predictiveness of a variable assuming variables selected close to the root are
 more important <a href=#bibliorsf>[2]</a>.
 						</li>
@@ -159,6 +179,14 @@ more important <a href=#bibliorsf>[2]</a>.
 data points, and a first group of variables is selected using minimal depth thresholding. Additional variables are then appended to the initial model in increasing order
 of minimal depth until the VIMP criterium stabilizes. The process is repeated several times, to finally retain the variables that appear most frequently over the trials.
 						</li>
+
+						<figure>
+							<img id="vimp" src="./images/VH.png" alt="VH"
+															title="VH" height=75% width=75% />
+														<figcaption>
+						Schematic of the calculation of the Variable-Hunting.
+						 </figcaption>
+														</figure>
 
 					</ul>
 

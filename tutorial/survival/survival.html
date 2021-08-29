@@ -76,29 +76,27 @@
 				<h1>Survival analysis</h1>
 				<p>Survival analysis corresponds to a set of statistical methods used to
 					evaluate the time for an event to occur. The event can be for example the
-					death, the realapse or the recovery. Thereafter, we will continue with the
+					death, the relapse or the recovery. Thereafter, we will continue with the
 					example of the death as an event and the survival time, the time between
 					the diagnosis and the death. </p>
-				<p> The survival function <em> S(t) </em> is for a fixed <em> t </em>, the
+				<p> The survival function <em> S<sub>i</sub>(t) </em> is for a fixed <em> t </em>, the
 					probability to survive until t, i-e :</p>
-				<p class="equation">S(t) = P(X > t); </p>
-				<p> with <em> t &lt 0 </em> and <em> X </em> the survival duration. We can
+				<p class="equation">S<sub>i</sub>(t) = P(t<sub>i</sub> > t); </p>
+				<p> with <em> t &lt 0 </em> and <em> t<sub>i</sub> </em> the survival duration of the individual i. We can
 					also precise the density function:</p>
-				<p class="equation"> f(t) = dS(t)dt</p>
+				<p class="equation"> f<sub>i</sub>(t) = dS<sub>i</sub>(t)dt</p>
 				<p>This function can be represented by survival curves according to the
 					time.</p>
 				<figure>
 					<img src="./images/survCurve.png" alt="Survival curve" title="Survival
-						curves" height=40% width=40% />
+						curves" height=60% width=60% />
 					<figcaption> Survival curves. The black curve corresponds to the average
 						survival curve. If we look at the figure, patients with the green curve
 						will have 75% of chance to be alive at 200 days when patients with the red
 						curve will have 25% to be alive, so the patient wil the green survival
 						curve have a better prognosis. </figcaption>
 				</figure>
-				<p> Moreover, survival analysis is characterised by the censorship. We call
-					censorship the fact that we don't observe the event of interest on the
-					individual. Right censorship is the most commun type of censorship. In this
+				<p> Furthermore, in survival the notion of censorship may be present, and more particularly right censorship. Right censorship is the failure to observe the event of interest to an individual and is the most commun type of censorship. In this
 					case, we know when the disease was detected but we don't know when he will
 					died because at the last follow up at <em>t</em> days , the patient was
 					alive. So, we know that he lived more than <em>t</em> days but we don't know
@@ -107,7 +105,7 @@
 				</p>
 				<figure>
 					<img src="./images/censorship.png" alt="censorship" title="censorship"
-						height=40% width=40% />
+						height=60% width=60% />
 					<figcaption> Censorship. t1: diagnosis time, t2: death time; When there is
 						no censorship, we know t1 and t2, so we know the exact duaration <em> d =
 							t2 - t1 </em> between diagnosis and death; With right-censorship, we know
@@ -118,15 +116,15 @@
 					</figcaption>
 				</figure>
 
-				<p>Thereafter, we will write <em> &delta;<sub> i </sub> </em>the censorsip
-					of the patient <em> i </em> (if <em> &delta;<sub> i </sub> </em> = 1 there
-					is an event and if <em> &delta;<sub> i </sub> </em>=0 there is
+				<p>Thereafter, we will write <em> &sigma;<sub> i </sub> </em>the censorsip
+					of the patient <em> i </em> (if <em> &sigma;<sub> i </sub> </em> = 1 there
+					is an event and if <em> &sigma;<sub> i </sub> </em>=0 there is
 					censorship/no event) and <em> t<sub> i </sub> </em> the time.</p>
 				<p>Survival analysis can be use to predict the efficiency of a treatment or
 					the seriousness of a disease </p>
 
 				<p>An important concept is the instantanious risk. It is defined as the
-					probability for an event in the time interval <em> [t + &Delta;t] </em>
+					probability for an event in the time interval <em> [t + &Delta;t[ </em>
 					knowing that the event didn't appended before <em> t</em>. It allows to
 					define the risk function (or hazard function) <em> h(t)</em> thats appears
 					to be a risk indicator: </p>
