@@ -7,41 +7,43 @@
 	<meta name="author" content="Ludivine Morvan">
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
 	<script id="MathJax-script" async
-		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 	<div class="entete">
 		<h2>Ludivine Morvan</h2>
 	</div>
 	<nav>
-			<ul>
-				<li><a href="../../index.html">Home</a></li>
-				<li><a href="../../about.html">About me</a></li>
-				<li><a href="../../work.html">Current work</a></li>
-				<li><a href="../../cv.html">CV</a></li>
-				<li><a href="../../publication.html">Publications</a></li>
-				<li><a href="../../tutorial.html">Tutorials</a></li>
-			</ul>
+		<ul>
+			<li><a href="../../index.html">Home</a></li>
+			<li><a href="../../about.html">About me</a></li>
+			<li><a href="../../work.html">Current work</a></li>
+			<li><a href="../../cv.html">CV</a></li>
+			<li><a href="../../publication.html">Publications</a></li>
+			<li><a href="../../tutorial.html">Tutorials</a></li>
+		</ul>
 	</nav>
 	<div class="container">
 		<div class="tutoNavig">
 			<ul>
 				<li><a class='t1' href="../survival/survival.html">Survival</a></li>
-					<ul>
-						<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
-						<li><a class='t2' href="../survival/kaplanM.html">Survival statistical learning</a></li>
+				<ul>
+					<li><a class='t2' href="../survival/survival.html">Generalities</a></li>
+					<li><a class='t2' href="../survival/kaplanM.html">Survival statistical learning</a></li>
 
-						<li><a class='t2' href="../survival/RSF.html">Survival machine learning</a></li>
+					<li><a class='t2' href="../survival/RSF.html">Survival machine learning</a></li>
 
-					</ul>
+				</ul>
 				<li><a class='t1' href="../MachineLearning/generalities.html">Machine learning</a></li>
 				<ul>
 					<li><a class='t2act' href="../MachineLearning/generalities.html">Generalities</a></li>
-					<li><a class='t2' href="../MachineLearning/Boosting.html">Supervised learning</a></li>
+					<li><a class='t2' href="../MachineLearning/reg.html">Supervised learning</a></li>
 					<ul>
-						<li><a class='t3' href="../MachineLearning/Boosting.html">Boosting methods</a></li>
-						<li><a class='t3' href="../MachineLearning/svm.html">SVM</a></li>
+						<li><a class='t3' href="../MachineLearning/reg.html">Regression methods</a></li>
 						<li><a class='t3' href="../MachineLearning/RF.html">Decision trees methods</a></li>
+						<li><a class='t3' href="../MachineLearning/svm.html">SVM</a></li>
+						<li><a class='t3' href="../MachineLearning/knn.html">k-nearest neighbors</a></li>
+						<li><a class='t3' href="../MachineLearning/nn.html">Neural Networks</a></li>
 					</ul>
 					<li><a class='t2' href="../MachineLearning/PCA.html">Unsupervised learning</a></li>
 					<ul>
@@ -50,29 +52,29 @@
 					</ul>
 				</ul>
 				<li><a class='t1' href="../DeepLearning/generalities.html">Deep
-						learning</a></li>
-				<ul>
-					<li><a class='t2' href="../DeepLearning/generalities.html">Generalities</a></li>
-					<li><a class='t2' href="../DeepLearning/layers.html">Layers</a></li>
-					<li><a class='t2' href="../DeepLearning/loss.html">Losses</a></li>
+					learning</a></li>
+					<ul>
+						<li><a class='t2' href="../DeepLearning/generalities.html">Generalities</a></li>
+						<li><a class='t2' href="../DeepLearning/layers.html">Layers</a></li>
+						<li><a class='t2' href="../DeepLearning/loss.html">Losses</a></li>
+					</ul>
 				</ul>
-			</ul>
-		</div><!-- /.tutoNavig -->
+			</div><!-- /.tutoNavig -->
 
 
-    		<div class="mainT">
-					<div class=arrow>
-						<div class=previous>
-							<a href= 'RSF.html'> <image src=../../previous.png alt='next' title='Survival analysis' width=12% height=12%/> &nbsp; Previous </a>
-							</div> <!-- /.previous -->
+			<div class="mainT">
+				<div class=arrow>
+					<div class=previous>
+						<a href= 'RSF.html'> <image src=../../previous.png alt='next' title='Survival analysis' width=12% height=12%/> &nbsp; Previous </a>
+					</div> <!-- /.previous -->
 
-							<div class=next>
-								<a href= 'Boosting.html'>Next &nbsp; <image src=../../next.png alt='next'
-										title='Supervised learning - Boosting methods - RSF' width=15% height=15%/> </a>
-								</div> <!-- /.next -->
-							</div> <!-- /.arrow -->
+					<div class=next>
+						<a href= 'reg.html'>Next &nbsp; <image src=../../next.png alt='next'
+							title='Supervised learning - Regression methods' width=15% height=15%/> </a>
+						</div> <!-- /.next -->
+					</div> <!-- /.arrow -->
 
-        	<h1>Machine learning</h1>
+					<h1>Machine learning</h1>
 					<h2> Statistical or machine learning ? </h2>
 					<p> We saw in the survival analysis chapter that there are statistical learning and machine learning methods.
 						However, what are the differences between the two? The first major difference is that statistical learning formalises a
@@ -85,81 +87,82 @@
 						For example, in the case of a large amount of data, machine learning methods may be the best choice,
 						but when the amount is small, statistical methods could be more efficient in terms of computation time and results. </p>
 
-					<h2> Supervised or unsupervised ? </h2>
-					<p>In the case of <b>supervised learning</b>, the classes are known and the goal is to predict the new class (in the case of classification for example). Application example:
-					Medical diagnosis, Market forecasting, image classification. <br/>
-					 Non exaustive list of methods:
-						<ul>
- 						 <li> Boosting methods</li>
- 						<li> Support-Vector Machines (SVM)</li>
-  						 <li> Linear Regressions </li>
- 							 <li>Logistic regression</li>
- 								 <li> Naive Bayes</li>
- 								 <li>Decision trees</li>
- 								 <li> K-nearest neighbor algorithm </li>
-								 <li> Neural networks (Multilayer perceptron)</li>
-						</ul>
+						<h2> Supervised or unsupervised ? </h2>
+						<p>In the case of <b>supervised learning</b>, the classes are known and the goal is to predict the new class (in the case of classification for example). Application example:
+							Medical diagnosis, Market forecasting, image classification. <br/>
+							Non exaustive list of methods:
+							<ul>
+								<li> Boosting methods</li>
+								<li> Support-Vector Machines (SVM)</li>
+								<li> Linear Regressions </li>
+								<li>Logistic regression</li>
+								<li> Naive Bayes</li>
+								<li>Decision trees methods (including Random Forest)</li>
+								<li> K-nearest neighbor algorithm </li>
+								<li> Neural networks (Multilayer perceptron)</li>
+							</ul>
 
-					</p>
-					<p>Conversely, in the case of <b>unsupervised learning</b>, the classes are not known but we wish to constitute homogeneous
-						 groups thanks to common patterns. Application example: big data visualisation, image segmentation, target marketing. <br/>
-						Non exaustive list of methods:
-					 <ul>
-						 <li> K-means clustering</li>
-						<li> Dimentionality reduction</li>
- 						 <li> Neural networks </li>
-							 <li>PCA (Principal Componant Analysis) </li>
-								 <li> Hierarchical clustering</li>
-								 <li>Distribution models</li>
-								 <li> Independent Component Analysis </li>
-					 </ul></p>
-					 <p> Also, there is <b>semi-supervised learning</b>. These are models using a set of labelled and unlabelled data.
-						 Using this unlabelled data in addition to the labelled data can greatly improve the results. Also, when the database
-						  is very large it is too tedious to label everything by hand. Thus, semi-supervised learning will save time while using
-							all the data. Application example: Face recognition, custumer segmentation, website classification.</p>
+						</p>
+						<p>Conversely, in the case of <b>unsupervised learning</b>, the classes are not known but we wish to constitute homogeneous
+							groups thanks to common patterns. Application example: big data visualisation, image segmentation, target marketing. <br/>
+							Non exaustive list of methods:
+							<ul>
+								<li> K-means clustering</li>
+								<li> Dimentionality reduction</li>
+								<li> Neural networks </li>
+								<li>PCA (Principal Componant Analysis) </li>
+								<li> Hierarchical clustering</li>
+								<li>Distribution models</li>
+								<li> Independent Component Analysis </li>
+							</ul></p>
+							<p> Also, there is <b>semi-supervised learning</b>. These are models using a set of labelled and unlabelled data.
+								Using this unlabelled data in addition to the labelled data can greatly improve the results. Also, when the database
+								is very large it is too tedious to label everything by hand. Thus, semi-supervised learning will save time while using
+								all the data. Application example: Face recognition, custumer segmentation, website classification.</p>
 
-							<p> Finally, there is <b>Reinforcement learning</b>. These are models continiously learning from the environment. It
-								allows machines to determine, based on the context, what decision to take or what action to make to maximise the rewards.Application example: autonomous vehicles, robotics hands, Game AI; <br/>
-	 						Non exaustive list of methods:
-	 					 <ul>
-	 						 <li> Deep Adversarial Networks</li>
-							 <li> Monte Carlo methods </li>
-							 <li> Temporal difference methods </li>
-	 					 </ul></p>
-
-
-
-
-						 <div class=biblio id="bibliomachineLearning">
-						 	<h1>References</h1>
-						 	<p><a href="https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861">Types of Machine learning algorithmes you should know, D. Fumo</a> </p>
-
-						</div>> <!-- /.biblio -->
-    		</div><!-- /.mainT -->
-		</div><!-- /.container -->
-
-		<div class=arrow>
-			<div class=previous>
-				<a href= '../survival/RSF.html'> <image src=../../previous.png alt='next' title='Survival analysis' width=12% height=12%/> &nbsp; Previous </a>
-				</div> <!-- /.previous -->
-
-				<div class=next>
-					<a href= 'Boosting.html'>Next &nbsp; <image src=../../next.png alt='next'
-							title='Supervised learning - Boosting methods - RSF' width=15% height=15%/> </a>
-					</div> <!-- /.next -->
-				</div> <!-- /.arrow -->
+								<p> Finally, there is <b>Reinforcement learning</b>. These are models continiously learning from the environment. It
+									allows machines to determine, based on the context, what decision to take or what action to make to maximise the rewards.Application example: autonomous vehicles, robotics hands, Game AI; <br/>
+									Non exaustive list of methods:
+									<ul>
+										<li> Deep Adversarial Networks</li>
+										<li> Monte Carlo methods </li>
+										<li> Temporal difference methods </li>
+									</ul></p>
 
 
 
 
+									<div class=biblio id="bibliomachineLearning">
+										<h1>References</h1>
+										<p><a href="https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861">Types of Machine learning algorithmes you should know, D. Fumo</a> </p>
 
-		<footer>
-    		<ul>
-        		<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
+									</div>> <!-- /.biblio -->
+								</div><!-- /.mainT -->
+							</div><!-- /.container -->
 
-						<!--<li><a href="https://github.com/ludivinemv">github</a></li>-->						<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
-						<li><a href="https://www.linkedin.com/in/ludivine-morvan-884153151/">linkedin</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+							<div class=arrow>
+								<div class=previous>
+									<a href= '../survival/RSF.html'> <image src=../../previous.png alt='next' title='Survival analysis' width=12% height=12%/> &nbsp; Previous </a>
+								</div> <!-- /.previous -->
+
+								<div class=next>
+									<a href= 'reg.html'>Next &nbsp; <image src=../../next.png alt='next'
+										title='Supervised learning - Regression methods' width=15% height=15%/> </a>
+									</div> <!-- /.next -->
+								</div> <!-- /.arrow -->
+
+
+
+
+
+								<footer>
+									<ul>
+										<li><a href="mailto:ludivine.morvan@ls2n.fr">email</a></li>
+										<li><a href="https://www.researchgate.net/profile/Ludivine_Morvan">researchgate</a></li>
+										<li><a href="https://www.linkedin.com/in/ludivine-morvan-884153151/">linkedin</a></li>
+									</ul>
+									<p>Last modified on this page: 30/08/2021</p>
+								</footer>
+
+							</body>
+							</html>
